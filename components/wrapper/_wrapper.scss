@@ -1,0 +1,14 @@
+.wrapper {
+	margin: var(--baseline);
+	float: left;
+	position: relative;
+
+	&:after {
+		content: "";
+		width: calc(var(--baseline) * 4);
+		height: calc(var(--baseline) / 4);
+		background-color: var(--color-text);
+		position: absolute;
+		right: 0
+	}
+}

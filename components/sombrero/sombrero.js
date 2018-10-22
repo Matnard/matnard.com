@@ -1,0 +1,1 @@
+import "./_sombrero.scss";
