@@ -1,6 +1,7 @@
 .menu {
 	text-align: right;
 	margin: var(--space-xl) 0;
+	mix-blend-mode: exclusion;
 
 	&__list {
 		list-style: none;

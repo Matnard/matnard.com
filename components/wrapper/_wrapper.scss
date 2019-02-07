@@ -1,14 +1,23 @@
 .wrapper {
 	margin: var(--baseline);
-	float: left;
+	float: right;
 	position: relative;
+
+	@media (min-width: 375px) {
+		float: left;
+	}
 
 	&:after {
 		content: "";
-		width: calc(var(--baseline) * 4);
+		width: calc(var(--baseline) * 2);
 		height: calc(var(--baseline) / 4);
 		background-color: var(--color-text);
 		position: absolute;
-		right: 0
+		right: 0;
+		mix-blend-mode: exclusion;
+
+		@media (min-width: 375px) {
+			width: calc(var(--baseline) * 3);
+		}
 	}
 }

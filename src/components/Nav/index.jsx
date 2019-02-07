@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import Link from "gatsby-link";
+import WithUnderlineAnimation from "../WithUnderlineAnimation";
+import WithRevealFx from "../WithRevealFx";
 
 function Nav() {
 
@@ -24,12 +26,15 @@ function Nav() {
 	}
 	`;
 
+	let AnimedLink = WithUnderlineAnimation(Link);
+	//AnimedLink = WithRevealFx(AnimedLink);
+
 	return (
 		<Container>
-			<List class="menu__list js-nav">
-				<li><Link css={navLinkStyles} to="/about"><span><span className="animated slideInUp">About</span></span></Link></li>
-				<li><Link css={navLinkStyles} to="/lab"><span><span className="animated slideInUp">Lab </span></span></Link></li>
-				<li><a css={navLinkStyles} href="mailto:m.mence@matnard.com"><span><span className="animated slideInUp">Contact</span></span></a></li>
+			<List className="menu__list js-nav">
+			  <li><AnimedLink css={navLinkStyles} to="/">About</AnimedLink></li>
+				<li><AnimedLink css={navLinkStyles} to="/contact">Contact</AnimedLink></li>
+				<li><AnimedLink css={css`${navLinkStyles} opacity: 0.3`} to="/lab">Lab</AnimedLink></li>
 			</List>
 		</Container>
 	)

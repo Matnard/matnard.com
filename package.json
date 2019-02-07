@@ -14,11 +14,20 @@
   "dependencies": {
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
+    "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
+    "dat.gui": "^0.7.5",
     "gatsby": "^2.0.111",
     "gatsby-plugin-emotion": "^4.0.3",
+    "gatsby-plugin-layout": "^1.0.12",
+    "gatsby-source-apiserver": "^2.0.0",
+    "gatsby-source-thirdparty": "^1.0.6",
+    "gsap": "^2.0.2",
     "normalize.css": "^8.0.1",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-transition-group": "^2.5.3",
+    "three": "^0.101.1"
   },
   "repository": {
     "type": "git",
@@ -26,5 +35,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "webpack-glsl-loader": "^1.0.1"
   }
 }

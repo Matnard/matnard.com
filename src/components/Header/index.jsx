@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "@emotion/styled";
-import matnard from "../../media/profile-17.svg"
+import matnard from "../../media/profile-17.svg";
+//import { RevealFx } from "../WithRevealFx";
 
 function Header() {
 	const Container = styled.header`
@@ -9,6 +10,7 @@ function Header() {
 	flex-direction: column;
 	align-items: flex-end;
 	text-align: right;
+	margin-top: var(--baseline);
 	`;
 
 	const ProfilePic = styled.img`
@@ -47,12 +49,12 @@ function Header() {
 	return (
 		<Container>
 			<Link to="/"><ProfilePic src={matnard} alt="Matnard profile picture" /></Link>
-			<Name><span><span className="animated slideInUp">Mathieu Mencé</span></span></Name>
+			<Name><span>Mathieu Mencé</span></Name>
 			<Position>
-				<span><span className="animated slideInUp">Web Graphics & </span></span>
-				<span><span className="animated slideInUp">Interface Developer</span></span>
+				<span>Web Graphics & </span><br/>
+				<span>Interface Developer</span>
 			</Position>
-			<Location><span><span class="animated slideInUp">Sydney, AU</span></span></Location>
+			<Location><span>Sydney, AU</span></Location>
 		</Container>
 	)
 }

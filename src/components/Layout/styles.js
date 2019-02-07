@@ -34,6 +34,7 @@ body {
     font-family: var(--font-primary);
     line-height: var(--body-line-height);
     color: var(--color-text);
+    background: black;
 }
 
 h1 {
@@ -119,7 +120,7 @@ export const spacing = css`
 }
 
 h1, .spacing--lg {
-  --heading-space: var(--space-lg);
+  --heading-space: var(--space-md);
   margin: var(--heading-space) 0;
 }
 
@@ -158,7 +159,7 @@ export const colors = `
     --color-accent-bg: color-mod(var(--color-accent) alpha(20%));
 
     // shades - generated using chroma.js - 12 steps
-    --black: #1d1d21;
+    --black: black;
     --gray-10: #2e2e31;
     --gray-6: #7b7a7d;
     --gray-4: #a5a5a6;
@@ -173,8 +174,8 @@ export const colors = `
     --color-warning: #ffd137;
 
     /* typography */
-    --color-text: var(--gray-10);
-    --color-text-heading: var(--black);
+    --color-text: white;
+    --color-text-heading: var(--gray-6);
     --color-text-subtle: var(--gray-6);
     --color-link: var(--color-primary);
     --color-link-visited: var(--color-primary-dark);

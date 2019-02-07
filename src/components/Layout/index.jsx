@@ -5,17 +5,25 @@ import styled from "@emotion/styled";
 import Header from "../Header";
 import Nav from "../Nav";
 import { vars, typography, spacing, colors} from "./styles";
+import Transition from "../Transition";
+import Background from "../Background"
 
+const Row = styled.div`
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-column-gap: var(--baseline);
+	`
 
-function Layout({children}) {
+function Layout({children, location}) {
 	const Block = styled.div`
 	display: grid;
-	grid-template-columns: 1min-content 1fr;
-	grid-template-rows: 1fr;
-	grid-template-areas: ". .";
+	grid-template-columns: max-content 1fr;
+	grid-column-gap: var(--baseline);
+	margin: 0 auto;
+	max-width: calc(45 * var(--baseline));
+
 	`;
 	const LayoutHeader = styled.div`
-	margin: var(--baseline);
 	float: right;
 	position: relative;
 
@@ -37,6 +45,8 @@ function Layout({children}) {
 		}
 	}
 	`;
+
+	
 	return (
 		<>
 			<Global styles={css`
@@ -45,15 +55,19 @@ function Layout({children}) {
 				${spacing}
 				${colors}
 				`} />
+			<Background />
 			<Block>
 				<LayoutHeader>
-					<Header />
+					{<Header />}
 					<Nav />
 				</LayoutHeader>
-				{children}
+				<Transition location={location}>
+          {children}
+        </Transition>
 			</Block>
 		</>
 	)
 }
 
+export {Row}
 export default Layout;
