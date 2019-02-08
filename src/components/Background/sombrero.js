@@ -115,17 +115,17 @@ class Sombrero {
 		this.quad.uniforms.u_bars.value = this.params.bars;
 		this.quad.update();
 		//Rotate the main box too
- this.mainBoxObject.rotation.y += 0.01;
- this.mainBoxObject.rotation.x += 0.01;
+		this.mainBoxObject.rotation.y += 0.01;
+		this.mainBoxObject.rotation.x += 0.01;
 		//renderer.render(this.bufferScene, this.camera, this.bufferTexture);
 		this.renderer.render(this.scene, this.camera);
 		requestAnimationFrame(this.onEnterFrame.bind(this));
 	}
 
 	onWindowResize(width = global.innerWidth, height = global.innerHeight) {
-	    this.camera.aspect = width / height;
-	    this.camera.updateProjectionMatrix();
-	    this.renderer.setSize( width, height );
+		this.camera.aspect = width / height;
+		this.camera.updateProjectionMatrix();
+		this.renderer.setSize( width, height );
 		this.quad.uniforms.u_resolution.value.x = this.renderer.domElement.width;
 		this.quad.uniforms.u_resolution.value.y = this.renderer.domElement.height;
 	}

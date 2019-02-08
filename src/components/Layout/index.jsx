@@ -56,7 +56,7 @@ function Layout({children, location}) {
 				${colors}
 				`} />
 			<Background />
-			<Block>
+			{/* {<Block>
 				<LayoutHeader>
 					{<Header />}
 					<Nav />
@@ -64,7 +64,7 @@ function Layout({children, location}) {
 				<Transition location={location}>
           {children}
         </Transition>
-			</Block>
+			</Block>} */}
 		</>
 	)
 }
