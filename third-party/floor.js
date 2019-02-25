@@ -1,9 +1,7 @@
-import {
-	Clock,
-	ShaderMaterial,
-	PlaneBufferGeometry,
-	Mesh
-} from 'three';
+// import {Clock} from 'three/src/core/Clock';
+// import {ShaderMaterial} from 'three/src/materials/ShaderMaterial';
+// import {PlaneBufferGeometry} from 'three/src/geometries/PlaneGeometry';
+// import {Mesh} from 'three/src/objects/Mesh';
 
 const vertexShader = `
 varying float zDisplacement;
@@ -162,7 +160,7 @@ void main(void)	{
 	float h = map(zDisplacement, 0.0, 1.0, 0.3, 0.5);
 	vec3 color = vec3(1.0);
 	vec3 p = mix(color, vec3(0.0), distanceToCenter);
-	gl_FragColor  = vec4(p, 1.0);
+	gl_FragColor  = vec4(p, 0.4);
 }
 `;
 
@@ -178,8 +176,8 @@ function getFloor(params /*= { noised: false, waveAmplitude: 10, noisedWaveAmpli
 		waveAmplitudeScale: {value: params.waveAmplitudeScale}
 	};
 
-	let clock = new Clock(true);
-	let material = new ShaderMaterial({
+	let clock = new global.THREE.Clock(true);
+	let material = new global.THREE.ShaderMaterial({
 		uniforms: customUniforms,
 		wireframe: true,
 		vertexShader,
@@ -187,10 +185,10 @@ function getFloor(params /*= { noised: false, waveAmplitude: 10, noisedWaveAmpli
 		transparent: true
 	});
 
-	let geometry = new PlaneBufferGeometry( 500, 500, 64, 64)
+	let geometry = new global.THREE.PlaneBufferGeometry( 500, 500, 64, 64)
 
 
-	var floor = new Mesh(
+	var floor = new global.THREE.Mesh(
 		geometry,
 		material
 	);

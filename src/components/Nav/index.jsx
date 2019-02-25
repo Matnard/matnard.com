@@ -3,18 +3,34 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import Link from "gatsby-link";
 import WithUnderlineAnimation from "../WithUnderlineAnimation";
-import WithRevealFx from "../WithRevealFx";
+import mq, {mqMax} from "../../layouts/breakpoints";
 
 function Nav() {
 
 	const Container = styled.nav`
-	text-align: right;
-	margin: var(--space-xl) 0;
+	margin: calc(var(--baseline)*0.5) 0;
 	mix-blend-mode: exclusion;
+	${mq[1]}{
+		text-align: right;
+		margin: var(--space-xl) 0;
+	}
 	`;
 
 	const List = styled.ul`
+
+	${mqMax[1]} {
+		padding: 0;
+		display: grid;
+		grid-column-gap: calc(var(--baseline) * 0.5);
+		grid-template-columns: max-content max-content max-content ;
+	}
 	list-style: none;
+	li {
+		display: inline;	
+		${mq[1]}{
+			display: block;
+		}
+	}
 	`;
 
 	const navLinkStyles = css`
@@ -32,9 +48,9 @@ function Nav() {
 	return (
 		<Container>
 			<List className="menu__list js-nav">
-			  <li><AnimedLink css={navLinkStyles} to="/">About</AnimedLink></li>
+			  <li><AnimedLink css={navLinkStyles} to="/about">About</AnimedLink></li>
 				<li><AnimedLink css={navLinkStyles} to="/contact">Contact</AnimedLink></li>
-				<li><AnimedLink css={css`${navLinkStyles} opacity: 0.3`} to="/lab">Lab</AnimedLink></li>
+				<li><AnimedLink css={navLinkStyles} to="/lab">Lab</AnimedLink></li>
 			</List>
 		</Container>
 	)

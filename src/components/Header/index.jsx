@@ -2,29 +2,42 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "@emotion/styled";
 import matnard from "../../media/profile-17.svg";
-//import { RevealFx } from "../WithRevealFx";
+import mq, {mqMax} from "../../layouts/breakpoints";
 
 function Header() {
 	const Container = styled.header`
+	
+	margin-top: var(--baseline);
+	${mq[1]}{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	text-align: right;
-	margin-top: var(--baseline);
+	}
 	`;
 
 	const ProfilePic = styled.img`
-	vertical-align: bottom;
 	width: calc(var(--baseline) * 2);
 	color: var(--color-text);
-	margin-bottom: calc(var(--baseline) / 2);
+	float: right;
 
-	@media (min-width: 375px) {
+	${mq[0]}{
 		width: calc(var(--baseline) * 3);
+	}
+	
+	${mq[1]}{
+		float: none;
+		display: block;
+		margin-bottom: calc(var(--baseline) / 2);
+		vertical-align: bottom;
 	}
 	`;
 
 	const Name = styled.h1`
+	${mqMax[1]} {
+		display: inline;
+		line-height: calc(var(--baseline) * 1);
+	}
 	font-weight: 700;
 	margin: 0;
 	line-height: var(--space-lg);

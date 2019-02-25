@@ -1,8 +1,37 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "animate.css": "^3.7.0",
+    "gatsby": "^2.0.117",
+    "gatsby-image": "^2.0.29",
+    "gatsby-plugin-emotion": "^4.0.3",
+    "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-layout": "^1.0.12",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-offline": "^2.0.23",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sharp": "^2.0.20",
+    "gatsby-source-apiserver": "^2.1.0",
+    "gatsby-source-filesystem": "^2.0.20",
+    "gatsby-transformer-sharp": "^2.1.13",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-helmet": "^5.2.0",
+    "react-transition-group": "^2.5.3",
+    "three": "^0.101.1",
+    "victor": "^1.1.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -11,32 +40,11 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
-  "dependencies": {
-    "@emotion/core": "^10.0.6",
-    "@emotion/styled": "^10.0.6",
-    "animate.css": "^3.7.0",
-    "axios": "^0.18.0",
-    "dat.gui": "^0.7.5",
-    "gatsby": "^2.0.111",
-    "gatsby-plugin-emotion": "^4.0.3",
-    "gatsby-plugin-layout": "^1.0.12",
-    "gatsby-source-apiserver": "^2.0.0",
-    "gatsby-source-thirdparty": "^1.0.6",
-    "gsap": "^2.0.2",
-    "normalize.css": "^8.0.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-transition-group": "^2.5.3",
-    "three": "^0.101.1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "devDependencies": {
-    "webpack-glsl-loader": "^1.0.1"
   }
 }

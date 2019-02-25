@@ -1,23 +1,134 @@
 import React from "react";
-import { Row } from "../components/Layout";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
+import SEO from "../components/seo";
+import Link from "gatsby-link";
+//import matnard from "../media/profile-17.svg";
+import WithUnderlineAnimation from "../components/WithUnderlineAnimation";
+import WithRevealFx from "../components/WithRevealFx";
+
+const IndexPage = () => (
+  <>
+    <Wrapper>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Section>
+        {/*<ProfilePic src={matnard} alt="Matnard profile picture" />*/}
+        <div>
+          <NameFx>Mathieu Mencé</NameFx>
+          <PositionFx>Web Graphics & </PositionFx>
+          <PositionFx>Interface Developer</PositionFx>
+          <LocationFx>
+            <span>Sydney, AU</span>
+          </LocationFx>
+          <Ul>
+            <li>
+              <AnimedLink css={navLinkStyles} to="/about">
+                About
+              </AnimedLink>
+            </li>
+            <li>
+              <AnimedLink css={navLinkStyles} to="/contact">
+                Contact
+              </AnimedLink>
+            </li>
+            <li>
+              <AnimedLink css={navLinkStyles} to="/lab">
+                Lab
+              </AnimedLink>
+            </li>
+          </Ul>
+        </div>
+      </Section>
+    </Wrapper>
+  </>
+);
+
+let AnimedLink = WithUnderlineAnimation(Link);
+
+const navLinkStyles = css`
+  text-decoration: none;
+  color: var(--color-text);
+
+  &:visited {
+    color: var(--color-text);
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100%;
+`;
 
 const Section = styled.section`
-grid-column-start: 1;
-grid-column-end: 9;
-`
+  /*display: grid;
+grid-column-gap: calc(var(--baseline) * 1);
+grid-template-columns: calc(var(--baseline) * 9) max-content;*/
+`;
 
-export default function(){
-	return (
-		<Row>
-			<Section>
-				<h2>Hi!</h2>
-				<p>I am a French-Caribbean Frontend Developer living permanently in Sydney Australia and currently working at <a href="https://www.jam3.com" target="_blank" rel="noopener noreferrer" >whiteGREY</a>.</p>
-				<p>Here I create and maintain JavaScript applications with React, Emotion and more recently serverless GatsbyJS websites extending WordPress v5 Gutenberg's blocks.
-				I've studied analogue and digital electronics and really enjoy the low-level of things.</p>
-				<p>I've been coding since high school and professionally since 2010, after landing my first job in Toronto Canada at Jam3media (now <a href="https://www.jam3.com" target="_blank" rel="noopener noreferrer" >Jam3</a>) as a Junior Flash Developer.</p>
-				<p>Data to Pixels/Texels is the side I'm interested in, that's why I spend time studying graphics shader programming and design principles to eventually make stuff "look good" and "feel good" 😅.</p>
-			</Section>
-		</Row>
-	)
+const Ul = styled.ul`
+  display: grid;
+  padding: 0;
+  margin: calc(var(--baseline) * 1) 0;
+  grid-column-gap: calc(var(--baseline) * 1);
+  grid-template-columns: max-content max-content max-content;
+  list-style: none;
+  li {
+    display: inline;
+  }
+`;
+
+const Name = styled.h1`
+  font-weight: 700;
+  margin: 0;
+
+  line-height: var(--space-lg);
+  font-size: var(--text-md);
+  color: var(--color-text);
+
+  @media (min-width: 768px) {
+    line-height: var(--space-xl);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+  }
+`;
+
+const NameFx = WithRevealFx(Name);
+
+const Position = styled.h2`
+  font-weight: 300;
+  margin: 0;
+
+  line-height: var(--space-md);
+  font-size: var(--text-md);
+  color: var(--color-text);
+
+  @media (min-width: 768px) {
+    line-height: var(--space-lg);
+    font-size: var(--text-lg);
+    color: var(--color-text);
+  }
+`;
+
+const PositionFx = WithRevealFx(Position);
+
+const Location = styled.p`
+margin: 0;
+line-height: var(--space-md);
+font-size: 1rem);
+color: var(--color-text);
+
+@media(min-width: 768px) {
+  line-height: var(--space-lg);
+  font-size: var(--text-md);
+  color: var(--color-text);
 }
+`;
+
+const LocationFx = WithRevealFx(Location);
+
+export default IndexPage;
