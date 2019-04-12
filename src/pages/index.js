@@ -32,6 +32,11 @@ const IndexPage = () => (
               </AnimedLink>
             </li>
             <li>
+              <AnimedLink css={navLinkStyles} to="/past-projects">
+                Past Projects
+              </AnimedLink>
+            </li>
+            <li>
               <AnimedLink css={navLinkStyles} to="/lab">
                 Lab
               </AnimedLink>
@@ -75,7 +80,7 @@ const Ul = styled.ul`
   padding: 0;
   margin: calc(var(--baseline) * 1) 0;
   grid-column-gap: calc(var(--baseline) * 1);
-  grid-template-columns: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
   list-style: none;
   li {
     display: inline;

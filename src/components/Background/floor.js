@@ -1,9 +1,4 @@
-import {
-	Clock,
-	ShaderMaterial,
-	PlaneBufferGeometry,
-	Mesh
-} from 'three';
+import { Clock, ShaderMaterial, PlaneBufferGeometry, Mesh } from "three";
 
 const vertexShader = `
 varying float zDisplacement;
@@ -162,55 +157,51 @@ void main(void)	{
 	float h = map(zDisplacement, 0.0, 1.0, 0.3, 0.5);
 	vec3 color = vec3(1.0);
 	vec3 p = mix(color, vec3(0.0), distanceToCenter);
-	gl_FragColor  = vec4(p, 1.0);
+	gl_FragColor  = vec4(p, 0.4);
 }
 `;
 
+function getFloor(
+  params /*= { noised: false, waveAmplitude: 10, noisedWaveAmplitude: 20, noiseAmplitude: 15, timeScale: 1, noisedTimeScale: 4 }*/
+) {
+  let customUniforms = {
+    time: { value: 0 },
+    noised: { value: params.noised },
+    waveAmplitude: { value: params.waveAmplitude },
+    noiseAmplitude: { value: params.noiseAmplitude },
+    timeScale: { value: params.timeScale },
+    waveAmplitudeScale: { value: params.waveAmplitudeScale }
+  };
 
-function getFloor(params /*= { noised: false, waveAmplitude: 10, noisedWaveAmplitude: 20, noiseAmplitude: 15, timeScale: 1, noisedTimeScale: 4 }*/) {
+  let clock = new Clock(true);
+  let material = new ShaderMaterial({
+    uniforms: customUniforms,
+    wireframe: true,
+    vertexShader,
+    fragmentShader,
+    transparent: true
+  });
 
-	let customUniforms = {
-		time: {value:0},
-		noised: {value: params.noised},
-		waveAmplitude: {value: params.waveAmplitude},
-		noiseAmplitude: {value: params.noiseAmplitude},
-		timeScale: {value: params.timeScale},
-		waveAmplitudeScale: {value: params.waveAmplitudeScale}
-	};
+  let geometry = new PlaneBufferGeometry(500, 500, 64, 64);
 
-	let clock = new Clock(true);
-	let material = new ShaderMaterial({
-		uniforms: customUniforms,
-		wireframe: true,
-		vertexShader,
-		fragmentShader,
-		transparent: true
-	});
+  var floor = new Mesh(geometry, material);
 
-	let geometry = new PlaneBufferGeometry( 500, 500, 64, 64)
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.set(0, 0, 0);
 
+  function updateFloor() {
+    material.uniforms["time"].value = clock.getElapsedTime();
 
-	var floor = new Mesh(
-		geometry,
-		material
-	);
+    material.uniforms["noised"].value = params.noised;
+    material.uniforms["waveAmplitude"].value = params.waveAmplitude;
+    material.uniforms["noiseAmplitude"].value = params.noiseAmplitude;
+    material.uniforms["timeScale"].value = params.timeScale;
+    material.uniforms["waveAmplitudeScale"].value = params.waveAmplitudeScale;
+    requestAnimationFrame(updateFloor);
+  }
 
-	floor.rotation.x = -Math.PI/2;
-	floor.position.set(0, 0, 0);
+  requestAnimationFrame(updateFloor);
 
-	function updateFloor() {
-		material.uniforms['time'].value = clock.getElapsedTime();
-
-		material.uniforms['noised'].value = params.noised;
-		material.uniforms['waveAmplitude'].value = params.waveAmplitude;
-		material.uniforms['noiseAmplitude'].value = params.noiseAmplitude;
-		material.uniforms['timeScale'].value = params.timeScale;
-		material.uniforms['waveAmplitudeScale'].value = params.waveAmplitudeScale;
-		requestAnimationFrame(updateFloor)
-	}
-
-	requestAnimationFrame(updateFloor)
-
-	return floor
+  return floor;
 }
 export default getFloor;
