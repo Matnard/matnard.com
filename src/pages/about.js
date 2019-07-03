@@ -16,12 +16,20 @@ const AboutPage = () => (
         <h2>Hi!</h2>
         <p>
           I am a French-Caribbean Frontend Developer living permanently in
-          Sydney Australia and currently working at whiteGREY.
+          Sydney Australia and{" "}
+          {/*<strike>currently working at whiteGREY</strike>*/}currently working
+          at The Monkeys.
         </p>
         <p>
-          Here I create, maintain websites and JavaScript applications with
+          {/*<strike>Here I create, maintain websites and JavaScript applications with
           React, Emotion and more recently serverless GatsbyJS websites
-          extending WordPress v5 Gutenberg's blocks.
+          extending WordPress v5 Gutenberg's blocks.</strike>*/}
+          Here, with my React and PixiJs skills I'm helping planting trees and
+          create awareness to get koalas better homes{" "}
+          <span role="img" aria-label="koala">
+            🐨
+          </span>
+          .
         </p>
         <p>
           I've studied analogue and digital electronics and really enjoy the

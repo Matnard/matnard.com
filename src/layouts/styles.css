@@ -1,5 +1,7 @@
 :root {
-  --font-primary: sans-serif;
+  --font-primary: "Open Sans", sans-serif;
+
+  --font-secondary: "Open Sans", sans-serif;
 }
 
 :root {
@@ -40,7 +42,13 @@ body {
   color: var(--color-text);
   background: black;
   margin: 0 calc(var(--baseline) * 1);
-  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  font-weight: 300;
 }
 
 h1 {

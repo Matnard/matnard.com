@@ -23,22 +23,24 @@ function camOperator(camera) {
     });
   }
 
-  function goto(x, y, z) {
+  function goto(conf) {
     isStatic = true;
 
-    TweenMax.to(camera.position, 3, {
+    const { x, y, z, lx, ly, lz } = conf.position;
+
+    TweenMax.to(camera.position, conf.duration, {
       x,
       y,
       z,
       onUpdate: function() {
-        camera.lookAt(0, 0, 70);
+        camera.lookAt(lx, ly, lz);
       }
     });
   }
 
   function onEnterFrame() {
     if (!isStatic) {
-      camera.position.y = Math.sin(t * 2) * 100 + 75;
+      camera.position.y = Math.sin(t * 7) * 100 + 75;
       camera.position.x = Math.cos(angle * 1.1) * RADIUS;
       camera.position.z = Math.sin(angle * 1.1) * RADIUS;
       camera.lookAt(0, 70, 0);

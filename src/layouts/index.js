@@ -42,6 +42,10 @@ const Layout = ({ children, location, pageContext }) => {
             ]}
           >
             <html lang="en" />
+            <link
+              href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+              rel="stylesheet"
+            />
           </Helmet>
           <Background page={location} />
           <Wrap>

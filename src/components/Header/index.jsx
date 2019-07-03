@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "@emotion/styled";
-import matnard from "../../media/profile-17.svg";
+import avatarPath from "../../media/profile-512.png";
+// import GlitchyAvatar from "../glitchy-avatar";
 import mq, { mqMax } from "../../layouts/breakpoints";
 
 function Header() {
@@ -15,13 +16,34 @@ function Header() {
     }
   `;
 
+  // const ProfilePic = styled(GlitchyAvatar)`
+  //   width: calc(var(--baseline) * 2) !important;
+  //   height: calc(var(--baseline) * 2) !important;
+  //   color: var(--color-text);
+  //   float: right;
+
+  //   ${mq[0]} {
+  //     width: calc(var(--baseline) * 3) !important;
+  //     height: calc(var(--baseline) * 3) !important;
+  //   }
+
+  //   ${mq[1]} {
+  //     float: none;
+  //     display: block;
+  //     margin-bottom: calc(var(--baseline) / 2);
+  //     vertical-align: bottom;
+  //   }
+  // `;
+
   const ProfilePic = styled.img`
-    width: calc(var(--baseline) * 2);
+    width: calc(var(--baseline) * 2) !important;
+    height: calc(var(--baseline) * 2) !important;
     color: var(--color-text);
     float: right;
 
     ${mq[0]} {
-      width: calc(var(--baseline) * 3);
+      width: calc(var(--baseline) * 3) !important;
+      height: calc(var(--baseline) * 3) !important;
     }
 
     ${mq[1]} {
@@ -37,11 +59,11 @@ function Header() {
       display: inline;
       line-height: calc(var(--baseline) * 1);
     }
-    font-weight: 700;
+    font-weight: 300;
     margin: 0;
     line-height: var(--space-lg);
     font-size: var(--text-md);
-    color: var(--color-text);
+    color: var(--color-text-heading);
   `;
 
   const Position = styled.h2`
@@ -61,7 +83,7 @@ function Header() {
   return (
     <Container>
       <Link to="/">
-        <ProfilePic src={matnard} alt="Matnard profile picture" />
+        <ProfilePic src={avatarPath} />
       </Link>
       <Name>
         <span>Mathieu Mencé</span>

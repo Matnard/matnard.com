@@ -88,17 +88,16 @@ const Ul = styled.ul`
 `;
 
 const Name = styled.h1`
-  font-weight: 700;
+  font-weight: 300;
   margin: 0;
 
   line-height: var(--space-lg);
   font-size: var(--text-md);
-  color: var(--color-text);
+  color: var(--color-text-heading);
 
   @media (min-width: 768px) {
     line-height: var(--space-xl);
     font-size: var(--text-lg);
-    color: var(--color-text);
   }
 `;
 

@@ -1,24 +1,24 @@
 import * as dat from "dat.gui";
 
-const ratios = {
-  minorSecond: 16 / 15,
-  majorSecond: 1.125,
-  minorThird: 1.2,
-  majorThird: 1.25,
-  perfectFourth: 4 / 3,
-  augFourth: 1.414,
-  perfectFifth: 1.5,
-  minorSixth: 1.6,
-  goldenSection: 1.61803398875,
-  majorSixth: 5 / 3,
-  minorSeventh: 16 / 9,
-  majorSeventh: 1.875,
-  octave: 2,
-  majorTenth: 2.5,
-  majorEleventh: 8 / 3,
-  majorTwelfth: 3,
-  doubleOctave: 4
-};
+// const ratios = {
+//   minorSecond: 16 / 15,
+//   majorSecond: 1.125,
+//   minorThird: 1.2,
+//   majorThird: 1.25,
+//   perfectFourth: 4 / 3,
+//   augFourth: 1.414,
+//   perfectFifth: 1.5,
+//   minorSixth: 1.6,
+//   goldenSection: 1.61803398875,
+//   majorSixth: 5 / 3,
+//   minorSeventh: 16 / 9,
+//   majorSeventh: 1.875,
+//   octave: 2,
+//   majorTenth: 2.5,
+//   majorEleventh: 8 / 3,
+//   majorTwelfth: 3,
+//   doubleOctave: 4
+// };
 
 export default function gui(params) {
   global.params = params;
@@ -34,9 +34,9 @@ export default function gui(params) {
   gui.add(params, "tx");
   gui.add(params, "ty");
   gui.add(params, "tz");
-  gui.add(params, "rx", 0, Math.PI * 2);
-  gui.add(params, "ry", 0, Math.PI * 2);
-  gui.add(params, "rz", 0, Math.PI * 2);
+  gui.add(params, "rx");
+  gui.add(params, "ry");
+  gui.add(params, "rz");
 
   return gui;
 }

@@ -4,7 +4,9 @@ import MousePositionTimeDifferencial from "../mouse-position-time-differencial/m
 import GamepadControls from "./third-party/THREE.GamepadControls";
 import getFloor from "./floor";
 import camOperator from "./cam-operator";
-// import gui from "./gui";
+//import gui from "./gui";
+
+import camPositions from "./jeromes-pick.json";
 
 class Background extends Component {
   componentDidMount() {
@@ -40,7 +42,7 @@ class Background extends Component {
       rz: -0.45929780344672005
     };
 
-    // this.gui = gui(this.camParams);
+    //this.gui = gui(this.camParams);
 
     this.renderer.setPixelRatio(window.devidePixelRatio);
     this.renderer.setSize(WIDTH, HEIGHT);
@@ -48,6 +50,7 @@ class Background extends Component {
     this.devCam = new PerspectiveCamera(FOV, WIDTH / HEIGHT, NEAR, FAR);
     this.camera = new PerspectiveCamera(FOV, WIDTH / HEIGHT, NEAR, FAR);
     window.camera = this.camera;
+    window.devCam = this.devCam;
 
     this.gc = new GamepadControls(this.devCam);
 
@@ -107,22 +110,22 @@ class Background extends Component {
   componentWillReceiveProps(newProps) {
     switch (newProps.page.pathname) {
       case "/about": {
-        this.operator.goto(87, -110, -171);
+        this.operator.goto({ position: this.positions[4], duration: 5 });
         break;
       }
 
       case "/contact": {
-        this.operator.goto(17, 190, 171);
+        this.operator.goto({ position: this.positions[5], duration: 5 });
         break;
       }
 
       case "/past-projects": {
-        this.operator.goto(57, -50, -171);
+        this.operator.goto({ position: this.positions[2], duration: 5 });
         break;
       }
 
       case "/lab": {
-        this.operator.goto(-77, 210, 171);
+        this.operator.goto({ position: this.positions[7], duration: 5 });
         break;
       }
 
@@ -134,31 +137,36 @@ class Background extends Component {
   constructor(props) {
     super(props);
     this.elSombrero = React.createRef();
+
+    this.positions = Object.values(camPositions.remembered).map(
+      position => position["0"]
+    );
   }
 
   onEnterFrame() {
     this.mouseDiff.update();
     this.params.noiseAmplitude = Math.abs(this.mouseDiff.value - 1) * 2;
 
-    // if (this.gc.active) {
-    //   this.camParams.tx = this.devCam.position.x;
-    //   this.camParams.ty = this.devCam.position.y;
-    //   this.camParams.tz = this.devCam.position.z;
-    //   this.camParams.rx = this.devCam.rotation.x;
-    //   this.camParams.ry = this.devCam.rotation.y;
-    //   this.camParams.rz = this.devCam.rotation.z;
-    // }
+    this.operator.onEnterFrame();
+    // this.camParams.tx = this.devCam.position.x;
+    // this.camParams.ty = this.devCam.position.y;
+    // this.camParams.tz = this.devCam.position.z;
+
+    // var lookAtVector = new Vector3(1, 1, 1);
+    // const test = lookAtVector.applyQuaternion(this.devCam.quaternion);
+    // this.camParams.rx = test.x;
+    // this.camParams.ry = test.y;
+    // this.camParams.rz = test.z;
     // this.camera.position.x = this.camParams.tx;
     // this.camera.position.y = this.camParams.ty;
     // this.camera.position.z = this.camParams.tz;
-    // this.camera.rotation.x = this.camParams.rx;
-    // this.camera.rotation.y = this.camParams.ry;
-    // this.camera.rotation.z = this.camParams.rz;
+    // this.camera.rotation.x = this.devCam.rotation.x;
+    // this.camera.rotation.y = this.devCam.rotation.y;
+    // this.camera.rotation.z = this.devCam.rotation.z;
 
     // for (var i in this.gui.__controllers) {
     //   this.gui.__controllers[i].updateDisplay();
     // }
-    this.operator.onEnterFrame();
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.onEnterFrame.bind(this));
   }
