@@ -2,7 +2,6 @@ import React from "react";
 import Link from "gatsby-link";
 import styled from "@emotion/styled";
 import avatarPath from "../../images/profile-512-clean.png";
-// import GlitchyAvatar from "../glitchy-avatar";
 import mq, { mqMax } from "../../layouts/breakpoints";
 
 function Header() {
@@ -15,25 +14,6 @@ function Header() {
       text-align: right;
     }
   `;
-
-  // const ProfilePic = styled(GlitchyAvatar)`
-  //   width: calc(var(--baseline) * 2) !important;
-  //   height: calc(var(--baseline) * 2) !important;
-  //   color: var(--color-text);
-  //   float: right;
-
-  //   ${mq[0]} {
-  //     width: calc(var(--baseline) * 3) !important;
-  //     height: calc(var(--baseline) * 3) !important;
-  //   }
-
-  //   ${mq[1]} {
-  //     float: none;
-  //     display: block;
-  //     margin-bottom: calc(var(--baseline) / 2);
-  //     vertical-align: bottom;
-  //   }
-  // `;
 
   const ProfilePic = styled.img`
     width: calc(var(--baseline) * 2) !important;
