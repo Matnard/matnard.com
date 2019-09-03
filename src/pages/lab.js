@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import SEO from "../components/seo";
 //import WithUnderlineAnimation from "../components/WithUnderlineAnimation";
 import { css } from "@emotion/core";
+import Img from "../components/image";
+import mq from "../layouts/breakpoints";
 
 class Lab extends Component {
   constructor(props) {
@@ -20,11 +22,15 @@ class Lab extends Component {
       grid-gap: var(--baseline);
     `;
 
-    // const Img = styled.img`
-    // width: 100%;
-    // `
+    const Feats = styled.div`
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: var(--baseline);
 
-    //let AnimedLink = WithUnderlineAnimation("a");
+      ${mq[0]} {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    `;
 
     const labLinkStyles = css`
       text-decoration: none;
@@ -37,8 +43,23 @@ class Lab extends Component {
 
     return (
       <>
-        <SEO title="Lab" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO
+          title="Lab"
+          keywords={[`experiments`, `javascript`, `frontend`, `webgl`]}
+        />
         <h3>Lab</h3>
+        <Feats>
+          <a
+            css={labLinkStyles}
+            href="https://github.com/Matnard/NardGL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img filename="nardgl.png" />
+            {"Open-source graphics library"}
+          </a>
+        </Feats>
+        <br />
         <Div>
           {this.props.data.allMatnardProjects.edges.map(({ node }) => (
             <a
@@ -48,7 +69,7 @@ class Lab extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {/* {<Img src={node.screenshot_url} alt="" />} */}
+              {<Img src={node.screenshot_url} alt="" />}
               {node.name}
             </a>
           ))}

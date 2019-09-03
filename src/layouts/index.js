@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import "normalize.css";
-// import { Global, css } from "@emotion/core";
 import styled from "@emotion/styled";
 import Header from "../components/Header/index";
 import Helmet from "react-helmet";

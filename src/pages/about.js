@@ -24,12 +24,12 @@ const AboutPage = () => (
           {/*<strike>Here I create, maintain websites and JavaScript applications with
           React, Emotion and more recently serverless GatsbyJS websites
           extending WordPress v5 Gutenberg's blocks.</strike>*/}
-          Here, with my React and PixiJs skills I'm helping planting trees and
-          create awareness to get koalas better homes{" "}
+          Here, with my React and PixiJs skills I'm helping planting trees by
+          coding a website that creates awareness to get koalas{" "}
           <span role="img" aria-label="koala">
             🐨
-          </span>
-          .
+          </span>{" "}
+          better homes!
         </p>
         <p>
           I've studied analogue and digital electronics and really enjoy the

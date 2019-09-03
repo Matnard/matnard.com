@@ -42,6 +42,7 @@ function Nav() {
 
   let AnimedLink = WithUnderlineAnimation(Link);
   //AnimedLink = WithRevealFx(AnimedLink);
+  const AnimedExtLink = WithUnderlineAnimation(ExtLink);
 
   return (
     <Container>
@@ -62,6 +63,16 @@ function Nav() {
           </AnimedLink>
         </li>
         <li>
+          <AnimedExtLink
+            css={navLinkStyles}
+            href="https://github.com/Matnard/"
+            target="_blank"
+            rel="nofollow noreferrer"
+          >
+            Github
+          </AnimedExtLink>
+        </li>
+        <li>
           <AnimedLink css={navLinkStyles} to="/lab">
             Lab
           </AnimedLink>
@@ -72,3 +83,9 @@ function Nav() {
 }
 
 export default Nav;
+
+class ExtLink extends React.Component {
+  render() {
+    return <a {...this.props}>{this.props.children}</a>;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled from "@emotion/styled";
-import avatarPath from "../../media/profile-512.png";
+import avatarPath from "../../images/profile-512-clean.png";
 // import GlitchyAvatar from "../glitchy-avatar";
 import mq, { mqMax } from "../../layouts/breakpoints";
 

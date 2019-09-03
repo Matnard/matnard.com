@@ -148,25 +148,6 @@ class Background extends Component {
     this.params.noiseAmplitude = Math.abs(this.mouseDiff.value - 1) * 2;
 
     this.operator.onEnterFrame();
-    // this.camParams.tx = this.devCam.position.x;
-    // this.camParams.ty = this.devCam.position.y;
-    // this.camParams.tz = this.devCam.position.z;
-
-    // var lookAtVector = new Vector3(1, 1, 1);
-    // const test = lookAtVector.applyQuaternion(this.devCam.quaternion);
-    // this.camParams.rx = test.x;
-    // this.camParams.ry = test.y;
-    // this.camParams.rz = test.z;
-    // this.camera.position.x = this.camParams.tx;
-    // this.camera.position.y = this.camParams.ty;
-    // this.camera.position.z = this.camParams.tz;
-    // this.camera.rotation.x = this.devCam.rotation.x;
-    // this.camera.rotation.y = this.devCam.rotation.y;
-    // this.camera.rotation.z = this.devCam.rotation.z;
-
-    // for (var i in this.gui.__controllers) {
-    //   this.gui.__controllers[i].updateDisplay();
-    // }
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(this.onEnterFrame.bind(this));
   }

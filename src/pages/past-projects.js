@@ -4,11 +4,7 @@ import styled from "@emotion/styled";
 //import SEO from "../components/seo";
 //import WithUnderlineAnimation from "../components/WithUnderlineAnimation";
 import { css } from "@emotion/core";
-// import lelepaImgPath from "../images/lelepa.png";
-// import volvoImgPath from "../images/dac.png";
-import LelepaImg from "../components/image.lelepa";
-import DacImg from "../components/image.dac";
-import MlaImg from "../components/image.mla";
+import Img from "../components/image";
 import mq from "../layouts/breakpoints";
 
 class Lab extends Component {
@@ -34,11 +30,11 @@ class Lab extends Component {
       ${mq[0]} {
         grid-template-columns: 1fr 1fr;
       }
-
-      ${mq[1]} {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
     `;
+    // ${mq[1]} {
+    //   grid-template-columns: 1fr 1fr 1fr;
+    // }
+    //`;
 
     const labLinkStyles = css`
       text-decoration: none;
@@ -86,11 +82,20 @@ class Lab extends Component {
         <Feats>
           <a
             css={labLinkStyles}
+            href="https://www.nrma.com.au/koala"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img filename="nrma-get-involved.png" />
+            {"NRMA - Koala"}
+          </a>
+          <a
+            css={labLinkStyles}
             href="https://pixi-lelepa.netlify.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LelepaImg />
+            <Img filename="lelepa.png" />
             {"Royal Caribbean - lelepa"}
           </a>
           <a
@@ -99,7 +104,7 @@ class Lab extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <DacImg />
+            <Img filename="dac.png" />
             {"Volvo - Driveaway calculator"}
           </a>
           <a
@@ -108,7 +113,7 @@ class Lab extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MlaImg />
+            <Img filename="mla.png" />
             {"MLA - Good Meat"}
           </a>
         </Feats>
