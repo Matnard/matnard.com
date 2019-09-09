@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import Link from "gatsby-link";
+import { HyperLink } from "../HyperLink";
 import WithUnderlineAnimation from "../WithUnderlineAnimation";
 import mq, { mqMax } from "../../layouts/breakpoints";
 
@@ -40,9 +40,7 @@ function Nav() {
     }
   `;
 
-  let AnimedLink = WithUnderlineAnimation(Link);
-  //AnimedLink = WithRevealFx(AnimedLink);
-  const AnimedExtLink = WithUnderlineAnimation(ExtLink);
+  let AnimedLink = WithUnderlineAnimation(HyperLink);
 
   return (
     <Container>
@@ -63,14 +61,14 @@ function Nav() {
           </AnimedLink>
         </li>
         <li>
-          <AnimedExtLink
+          <AnimedLink
             css={navLinkStyles}
             href="https://github.com/Matnard/"
             target="_blank"
             rel="nofollow noreferrer"
           >
             Github
-          </AnimedExtLink>
+          </AnimedLink>
         </li>
         <li>
           <AnimedLink css={navLinkStyles} to="/lab">
@@ -83,9 +81,3 @@ function Nav() {
 }
 
 export default Nav;
-
-class ExtLink extends React.Component {
-  render() {
-    return <a {...this.props}>{this.props.children}</a>;
-  }
-}

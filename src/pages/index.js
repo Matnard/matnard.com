@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import SEO from "../components/seo";
-import Link from "gatsby-link";
+import { HyperLink } from "../components/HyperLink";
 //import matnard from "../media/profile-17.svg";
 import WithUnderlineAnimation from "../components/WithUnderlineAnimation";
 import WithRevealFx from "../components/WithRevealFx";
@@ -15,7 +15,7 @@ const IndexPage = () => (
         {/*<ProfilePic src={matnard} alt="Matnard profile picture" />*/}
         <div>
           <NameFx>Mathieu Mencé</NameFx>
-          <PositionFx>Web Graphics & </PositionFx>
+          <PositionFx>Web Graphics &amp; </PositionFx>
           <PositionFx>Interface Developer</PositionFx>
           <LocationFx>
             <span>Sydney, AU</span>
@@ -37,14 +37,14 @@ const IndexPage = () => (
               </AnimedLink>
             </li>
             <li>
-              <AnimedExtLink
+              <AnimedLink
                 css={navLinkStyles}
                 href="https://github.com/Matnard/"
                 target="_blank"
                 rel="nofollow noreferrer"
               >
                 Github
-              </AnimedExtLink>
+              </AnimedLink>
             </li>
             <li>
               <AnimedLink css={navLinkStyles} to="/lab">
@@ -58,13 +58,7 @@ const IndexPage = () => (
   </>
 );
 
-class ExtLink extends React.Component {
-  render() {
-    return <a {...this.props}>{this.props.children}</a>;
-  }
-}
-const AnimedLink = WithUnderlineAnimation(Link);
-const AnimedExtLink = WithUnderlineAnimation(ExtLink);
+const AnimedLink = WithUnderlineAnimation(HyperLink);
 
 const navLinkStyles = css`
   text-decoration: none;
