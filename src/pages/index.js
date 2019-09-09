@@ -37,6 +37,16 @@ const IndexPage = () => (
               </AnimedLink>
             </li>
             <li>
+              <AnimedExtLink
+                css={navLinkStyles}
+                href="https://github.com/Matnard/"
+                target="_blank"
+                rel="nofollow noreferrer"
+              >
+                Github
+              </AnimedExtLink>
+            </li>
+            <li>
               <AnimedLink css={navLinkStyles} to="/lab">
                 Lab
               </AnimedLink>
@@ -48,7 +58,13 @@ const IndexPage = () => (
   </>
 );
 
-let AnimedLink = WithUnderlineAnimation(Link);
+class ExtLink extends React.Component {
+  render() {
+    return <a {...this.props}>{this.props.children}</a>;
+  }
+}
+const AnimedLink = WithUnderlineAnimation(Link);
+const AnimedExtLink = WithUnderlineAnimation(ExtLink);
 
 const navLinkStyles = css`
   text-decoration: none;
@@ -80,7 +96,7 @@ const Ul = styled.ul`
   padding: 0;
   margin: calc(var(--baseline) * 1) 0;
   grid-column-gap: calc(var(--baseline) * 1);
-  grid-template-columns: max-content max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content max-content;
   list-style: none;
   li {
     display: inline;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { WebGLRenderer, PerspectiveCamera, PointLight, Scene } from "three";
 import MousePositionTimeDifferencial from "../mouse-position-time-differencial/mouse-position-time-differencial";
-import GamepadControls from "./third-party/THREE.GamepadControls";
+//import GamepadControls from "./third-party/THREE.GamepadControls";
 import getFloor from "./floor";
 import camOperator from "./cam-operator";
 //import gui from "./gui";
@@ -52,7 +52,7 @@ class Background extends Component {
     window.camera = this.camera;
     window.devCam = this.devCam;
 
-    this.gc = new GamepadControls(this.devCam);
+    //this.gc = new GamepadControls(this.devCam);
 
     this.pointLight = new PointLight(0xffffff);
 
