@@ -16,7 +16,7 @@ const IndexPage = () => (
         <div>
           <NameFx>Mathieu Mencé</NameFx>
           <PositionFx>Web Graphics &amp; </PositionFx>
-          <PositionFx>Interface Developer</PositionFx>
+          <PositionFx>Fullstack Engineer</PositionFx>
           <LocationFx>
             <span>Sydney, AU</span>
           </LocationFx>

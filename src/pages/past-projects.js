@@ -84,6 +84,15 @@ function PastProjects(props) {
       <Feats>
         <a
           css={labLinkStyles}
+          href="https://www.myob.com/au/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Img filename="myob.png" />
+          {"MYOB - NZ Practice"}
+        </a>
+        <a
+          css={labLinkStyles}
           href="https://www.nrma.com.au/koala"
           target="_blank"
           rel="noopener noreferrer"

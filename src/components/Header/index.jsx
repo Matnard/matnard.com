@@ -71,7 +71,7 @@ function Header() {
       <Position>
         <span>Web Graphics &amp;</span>
         <br />
-        <span>Interface Developer</span>
+        <span>Fullstack Engineer</span>
       </Position>
       <Location>
         <span>Sydney, AU</span>

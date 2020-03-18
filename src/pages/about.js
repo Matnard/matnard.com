@@ -10,26 +10,48 @@ const Section = styled.section`
 
 const AboutPage = () => (
   <>
-    <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="About"
+      keywords={[
+        `gatsby`,
+        `application`,
+        `react`,
+        `fullstack`,
+        `c#`,
+        `dotnet core`,
+        `javascript`
+      ]}
+    />
     <Row>
       <Section>
         <h2>Hi!</h2>
         <p>
-          I am a French-Caribbean Frontend Developer living permanently in
+          I am a French-Caribbean Fullstack Engineer living permanently in
           Sydney Australia and{" "}
-          {/*<strike>currently working at whiteGREY</strike>*/}currently working
-          at The Monkeys.
+          {/*<strike>currently working at whiteGREY</strike>*/}
+          <strike>currently working at The Monkeys.</strike> currently working
+          at MYOB
         </p>
         <p>
           {/*<strike>Here I create, maintain websites and JavaScript applications with
           React, Emotion and more recently serverless GatsbyJS websites
           extending WordPress v5 Gutenberg's blocks.</strike>*/}
-          Here, with my React and PixiJs skills I'm helping planting trees by
-          coding a website that creates awareness to get koalas{" "}
-          <span role="img" aria-label="koala">
-            🐨
-          </span>{" "}
-          better homes!
+          <strike>
+            Here, with my React and PixiJs skills I'm helping planting trees by
+            coding a website that creates awareness to get koalas{" "}
+            <span role="img" aria-label="koala">
+              🐨
+            </span>{" "}
+            better homes!
+          </strike>
+          <br />
+          Here, I am part of a feature team that is working on a ReactJS C#
+          Dotnet Core stack in a microservices architecture where we're enabling
+          New Zealand taxes to be "filed" in the cloud{" "}
+          <span role="img" aria-label="cloud">
+            🌥️
+          </span>
+          .
         </p>
         <p>
           I've studied analogue and digital electronics and really enjoy the
