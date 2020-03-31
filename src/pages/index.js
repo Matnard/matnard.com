@@ -75,8 +75,11 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  height: 100vh;
+  height: 85vh;
   width: 100%;
+  @media (min-width: 768px) {
+    height: 85vh;
+  }
 `;
 
 const Section = styled.section`
