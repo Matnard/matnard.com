@@ -57,7 +57,7 @@ function Nav() {
         </li>
         <li>
           <AnimedLink css={navLinkStyles} to="/past-projects">
-            Past Projects
+            Projects
           </AnimedLink>
         </li>
         <li>
