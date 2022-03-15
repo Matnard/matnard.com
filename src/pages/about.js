@@ -34,13 +34,14 @@ const AboutPage = () => (
         <p>
           Currently, I am part of a dedicated product team at Playground XYZ,
           where we are working on a ReactJS TypeScript stack in a micro-services
-          architecture that enables our clients to get deep insights on how
-          users engage with their advertisements.
+          architecture to enable our clients to get deep insights on how users
+          engage with their advertisements.
         </p>
         <p>
           I've studied both analogue and digital electronics to feed my interest
           in the granular aspects of software engineering.
         </p>
+
         <p>
           A key driver in my work is to make functional software that looks and
           feels good to use. I have a keen eye for design and functionality. My
