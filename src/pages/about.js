@@ -52,6 +52,13 @@ const AboutPage = () => (
           my interest in Data to Pixels/Texels led me to study graphics shader
           programming and design principles in my spare time.
         </p>
+        <p>
+          I have additional skills in current industry coding standards (Babel,
+          ES Modules, ESNext ), 3+ years compound React (Styled components,
+          Redux, Gatsby), knowledge in WebGL 2.0 and shader programming
+          alongside libs such as Three.js, Pixi.js, GSAP for web graphics
+          development, and experience in NodeJS and Dotnet core backend.
+        </p>
       </Section>
     </Row>
   </>
