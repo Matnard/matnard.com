@@ -46,12 +46,6 @@ module.exports = {
         verboseOutput: true
       },
       data: null
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-128247819-1"
-      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
